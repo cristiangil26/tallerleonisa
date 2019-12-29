@@ -4,13 +4,25 @@ import java.util.ArrayList;
 
 public class Pedido {
     ArrayList<Producto> productos = new ArrayList<Producto>();
-    public void asignarProducto(Leonisa leonisa){
-        productos.add(leonisa);
+    public boolean asignarProducto(Leonisa leonisa){
+        if (leonisa != null){
+            productos.add(leonisa);
+            return true;
+        }
+        return false;
     }
-    public void asignarProducto(Leo leo){
-        productos.add(leo);
+    public boolean asignarProducto(Leo leo){
+        if (leo != null){
+            productos.add(leo);
+            return true;
+        }
+        return false;
     }
-    public void asignarProducto(Teen teen){
-        productos.add(teen);
+    public boolean asignarProducto(Teen teen){
+        if (teen != null){
+            productos.add(teen);
+            return true;
+        }
+        return false;
     }
 }

@@ -13,6 +13,7 @@ public class ProductoTest {
         categoria = new Categoria("Brazier","34b","negro","algodón");
         producto = new Producto("adf23",23243);
         producto.setCategoria(categoria);
+        producto.setPrecio(25094.23);
     }
     @Test
     public void setCategoria(){
@@ -29,7 +30,7 @@ public class ProductoTest {
     }
     @Test
     public void getPrecio(){
-        Assert.assertTrue("los valores no son iguales",producto.getPrecio() == 23243);
+        Assert.assertTrue("los valores no son iguales",producto.getPrecio() == 25094.23);
     }
     @Test
     public void setPrecio(){

@@ -10,7 +10,12 @@ public class CategoriaTest{
     private Categoria categoria;
     @Before
     public void setUp() throws Exception {
-        categoria = new Categoria("tanga","m","rosada","seda");
+
+        categoria = new Categoria();
+        categoria.setTipoPrenda("tanga");
+        categoria.setTalla("M");
+        categoria.setColor("rosada");
+        categoria.setMaterial("seda");
     }
 
     @Test
@@ -25,7 +30,7 @@ public class CategoriaTest{
 
     @Test
     public void testGetTalla() {
-        Assert.assertEquals("la talla no es igual","m",categoria.getTalla());
+        Assert.assertEquals("la talla no es igual","M",categoria.getTalla());
     }
 
     @Test
