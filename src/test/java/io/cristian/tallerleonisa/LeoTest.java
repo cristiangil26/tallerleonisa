@@ -6,15 +6,19 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class LeoTest{
+public class LeoTest {
 
     private Categoria categoria;
     private Leo leo;
+    private Pedido pedido;
     @Before
     public void setUp() throws Exception {
         leo = new Leo("123k",3000.45);
         categoria = new Categoria("bozer","L","blanco","algodón");
         leo.setCategoria(categoria);
+        pedido = new Pedido();
+        pedido.asignarProducto(leo);
+        pedido.totalCategoria();
     }
 
     @Test
@@ -40,5 +44,18 @@ public class LeoTest{
     @Test
     public void setCategoria() {
         Assert.assertNotNull("el objeto no puede ser nulo",categoria);
+    }
+
+    @Test
+    public void descuentoPagoEfectivo() {
+
+        Assert.assertTrue("los valores no son iguales",
+               leo.descuentoPagoEfectivo(pedido.getTotalLeo()) == 1200.18);
+    }
+
+    @Test
+    public void descuentoProntoPago() {
+        Assert.assertTrue("los valores no son iguales",
+                leo.descuentoProntoPago(24, pedido.getTotalLeo()) == 300.045);
     }
 }
