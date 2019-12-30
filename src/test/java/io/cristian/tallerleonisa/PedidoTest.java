@@ -17,6 +17,11 @@ public class PedidoTest {
         leo = new Leo("123kh",3030.45);
         teen = new Teen("123kh",3030.45);
         pedido = new Pedido();
+        pedido.asignarProducto(leonisa);
+        pedido.asignarProducto(leo);
+        pedido.asignarProducto(teen);
+        pedido.totalCategoria();
+
     }
 
     @Test
@@ -32,5 +37,20 @@ public class PedidoTest {
     @Test
     public void testAsignarProducto1() {
         Assert.assertTrue("el objeto no puede ser nulo",pedido.asignarProducto(teen));
+    }
+
+    @Test
+    public void getTotalLeonisa() {
+        Assert.assertTrue("total de la categoría leonisa no es igual",3000.45 == pedido.getTotalLeonisa());
+    }
+
+    @Test
+    public void getTotalLeo() {
+        Assert.assertTrue("total de la categoría leo no es igual",3030.45 == pedido.getTotalLeo());
+    }
+
+    @Test
+    public void getTotalTeen() {
+        Assert.assertTrue("total de la categoría teen no es igual",3030.45 == pedido.getTotalTeen());
     }
 }
