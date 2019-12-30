@@ -3,7 +3,9 @@ package io.cristian.tallerleonisa;
 import java.util.ArrayList;
 
 public class Pedido {
-    ArrayList<Producto> productos = new ArrayList<Producto>();
+    private ArrayList<Producto> productos = new ArrayList<Producto>();
+
+
     public boolean asignarProducto(Leonisa leonisa){
         if (leonisa != null){
             productos.add(leonisa);
@@ -24,5 +26,9 @@ public class Pedido {
             return true;
         }
         return false;
+    }
+
+    public ArrayList<Producto> getProductos() throws PedidoException{
+        return productos;
     }
 }
